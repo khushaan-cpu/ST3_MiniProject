@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1>Details Form</h1>
+        <hr style="color: black; width: 600px;">
+        <form>
+            <table>
+                <tr class="bottom-space">
+                    <td class="label-decoration">Name : </td>
+                    <td><input type="text" id="name" class="input-decoration" placeholder="Enter Name" required minlength="3"></td>
+                </tr>
+                <tr class="bottom-space">
+                    <td class="label-decoration">Mob. No. : </td>
+                    <td><input type="tel" id="number" class="input-decoration" placeholder="Enter Mob. No." pattern="^\d{10}$"></td>
+                </tr>
+                <tr class="bottom-space">
+                    <td class="label-decoration">Email ID :</td>
+                    <td><input type="email" id="email" class="input-decoration" placeholder="Enter email id" required></td>
+                </tr>
+                <tr class="bottom-space">
+                    <td colspan="2"><button type="button" id="submit-button" onclick="submitForm()">Submit</button><td>
+                </tr>
+            </table>
+        </form>
+        <hr width="900px">
+        <table id="myTable">
+            
+        </table>
+        <script>
+           function submitForm(){
+            var name = document.getElementById("name").value;
+            var number = document.getElementById("number").value;
+            var email = document.getElementById("email").value;
+
+            var table = document.getElementById("myTable");
+            var row = table.insertRow(-1);
+
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+
+            cell1.innerHTML = name;
+            cell2.innerHTML = number;
+            cell3.innerHTML = email;
+           }
+        </script>
+    </body>
+</html>
